@@ -5,6 +5,7 @@
 // }
 
 let addMany = (c) => {
+    
     d = c.map(item => Number.parseInt(item))
     e = d.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;

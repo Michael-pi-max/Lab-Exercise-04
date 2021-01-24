@@ -50,7 +50,16 @@ let personProfile = {
     personProfile.job = prompt("What is Your Profession ?");
     personProfile.birthYear = prompt("Enter Your Birth Year");
     personProfile.weight = prompt("Your Weight in Kg  ? ");
+    if(isNaN(personProfile.weight)){
+        console.log('Invalid Input - Make sure you enter a number');
+        personProfile.weight = prompt("Your Weight in Kg  ? ");
+    }
     personProfile.height = prompt("Your Height in M  ? ");
+    if(isNaN(personProfile.height)){
+        console.log('Invalid Input - Make sure you enter a number');
+        personProfile.height = prompt("Your Height in M  ? ");
+    }
+    
     let numberOfFamily = prompt("Number of Family  ? ");
 
     //Receiving the family number 
@@ -74,9 +83,13 @@ let personProfile = {
         console.log("Family Member  " + (index + 1) + " : " + member);
     });
     console.log("********BMI DETAILS********")
-    console.log("BMI " + personProfile.calcBmi().toFixed(2));
-    console.log("Status " + personProfile.bmiDescription())
-
+    if(isNaN(personProfile.weight) || isNaN(personProfile.height)){
+        console.log('Make sure you enter valid height or weight')
+    }else{
+        console.log("BMI " + personProfile.calcBmi().toFixed(2));
+        console.log("Status " + personProfile.bmiDescription())
+    }
+    
     console.log("**************************************************************")
 
 })();
