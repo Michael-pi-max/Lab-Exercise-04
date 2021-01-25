@@ -73,7 +73,12 @@ let personProfile = {
 
     console.log("**************************************************************")
     console.log("Here is your Profile ")
-    console.log("Full Name: " + personProfile.firstName + " " + personProfile.lastName);
+    if(isNaN(personProfile.firstName) && isNaN(personProfile.lastName)){
+        console.log("Full Name: " + personProfile.firstName + " " + personProfile.lastName);
+    }else{
+        console.log("XXX Number found in your name, make sure you type your name right XXX")
+    }
+    
     console.log("Profession : " + personProfile.job);
     console.log("Age : " + personProfile.age + " " + "years old");
     console.log("Is Eligible to Vote : " + personProfile.isEligibleToVote);
@@ -84,7 +89,7 @@ let personProfile = {
     });
     console.log("********BMI DETAILS********")
     if(isNaN(personProfile.weight) || isNaN(personProfile.height)){
-        console.log('Make sure you enter valid height or weight')
+        console.log('XXX Make sure you enter valid height or weight XXX')
     }else{
         console.log("BMI " + personProfile.calcBmi().toFixed(2));
         console.log("Status " + personProfile.bmiDescription())
